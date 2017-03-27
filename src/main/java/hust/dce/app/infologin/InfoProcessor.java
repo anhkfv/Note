@@ -1,6 +1,8 @@
 package hust.dce.app.infologin;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -25,7 +27,6 @@ public class InfoProcessor {
 	public InfoResult handle(InfoQuery query) {
 
 		InfoDto dto = infoLogin.findData(query.getId());
-		
 		InfoResult result = new InfoResult();
 		
 		if(dto != null){
@@ -72,6 +73,4 @@ public class InfoProcessor {
 		}
 		return result;
 	}
-
-
 }

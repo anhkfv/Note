@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class InfoQuery {
+public class InfoQuery  {
 
 	private String id;
 
