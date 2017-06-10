@@ -49,8 +49,9 @@ a {
 	padding: 5px;
 }
 </style>
-<script language="javascript"
-	src="jquery.js"></script>
+<link rel="stylesheet" href="progressbar.css">
+<script language="javascript" src="jquery.js"></script>
+<script language="javascript" src="upload.js"></script>
 
 
 <script>
@@ -188,8 +189,7 @@ function load1()
 					<tr>
 						<td style="margin-right: 0px; color: #DEB887;">ID</td>
 						<td><input id="User" type="text" name="User"
-							placeholder="Nhap so "
-							maxlength="8"></td>
+							placeholder="Nhap so " maxlength="8"></td>
 					</tr>
 					<tr>
 						<td style="color: #DEB887;">Passsword</td>
@@ -198,6 +198,17 @@ function load1()
 					</tr>
 				</table>
 			</form>
+		
+			<h1>Upload a File</h1>
+
+			<progress max=100></progress>
+			<span id="progress_percent">0</span>%
+
+			<p>
+				Choose : <input type="file" name="upload_file" />
+			</p>
+			<button id="upload_btn">Start Uploading</button>
+			<div id="output"></div>
 		</div>
 		<div align="center">
 

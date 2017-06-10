@@ -30,14 +30,16 @@ public class GetDataProcessor {
 		InfoDto info = infoLogin.findLogin(query.getId(),
 				generator.generatorSha256(query.getPassword() + query.getId()));
 		List<NoteDto> datas = monthData.findData(info.getUserId());
-		for (NoteDto note : datas) {
-			Note dto = new Note();
-			dto.setId(Integer.parseInt(note.getCode()));
-			dto.setNameNote(note.getSummary());
-			dto.setDetailNote(note.getDetail());
-			dto.setImageNote(note.getImage());
-			dto.setDate(df.format(note.getYearData()));
-			notes.add(dto);
+		if (datas!=null&&!datas.isEmpty()) {
+			for (NoteDto note : datas) {
+				Note dto = new Note();
+				dto.setId(Long.parseLong(note.getCode()));
+				dto.setNameNote(note.getSummary());
+				dto.setDetailNote(note.getDetail());
+				dto.setImageNote(note.getImage());
+				dto.setDate(df.format(note.getYearData()));
+				notes.add(dto);
+			}
 		}
 		result.setNotes(notes);
 		return result;

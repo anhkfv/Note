@@ -35,7 +35,7 @@ public class DataProcessor {
 			try {
 				NoteDto dto = new NoteDto();
 				dto.setSummary(note.getNameNote());
-				dto.setDetail(dto.getDetail());
+				dto.setDetail(note.getDetailNote());
 				dto.setImage(note.getImageNote());
 				List<NoteDto> data = monthData.findDataWithPk(info.getUserId(), df.parse(note.getDate()),
 						String.valueOf(note.getId()));

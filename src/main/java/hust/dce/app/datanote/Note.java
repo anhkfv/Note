@@ -17,7 +17,7 @@ public class Note {
 	
 	private String date;
 	
-	private int id;
+	private long id;
 
 	
 }
